@@ -1,0 +1,38 @@
+﻿Macrobo - ライセンス情報 2019 AK soft
+
+BouncyCastle 
+Author : Bouncy Castle Project Contributors
+http://www.bouncycastle.org/licence.html
+
+log4net
+Author : The Apache Software Foundation
+http://logging.apache.org/log4net/license.html
+
+MailKit
+MimeKit
+Author : Jeffrey Stedfast
+https://licenses.nuget.org/MIT
+
+Newtonsoft.Json
+Author : James Newton-King
+https://licenses.nuget.org/MIT
+
+OpenCvSharp3-AnyCPU
+Author : shimat
+https://opensource.org/licenses/BSD-3-Clause
+
+System.Data.SQLite
+Author : SQLite Development Team
+https://www.sqlite.org/copyright.html
+
+Microsoft-WindowsAPICodePack-Shell
+Author : rpastric
+https://github.com/contre/Windows-API-Code-Pack-1.1/LICENSE
+
+NPOI
+Author : NPOI Contributors
+https://www.nuget.org/packages/NPOI/2.4.1/license
+
+LumenWorks CsvReader
+Author : Sébastien Lorion, Paul Hatcher
+https://opensource.org/licenses/mit-license.php

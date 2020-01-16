@@ -1,0 +1,716 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\OpenCvSharp3-AnyCPU.4.0.0.20181129\build\OpenCvSharp3-AnyCPU.props" Condition="Exists('..\packages\OpenCvSharp3-AnyCPU.4.0.0.20181129\build\OpenCvSharp3-AnyCPU.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9F01F2DD-E3AC-40FF-B44C-04BE625AE84C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Macrobo</RootNamespace>
+    <AssemblyName>Macrobo</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.1.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>robot_128_128.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Macrobo.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.2.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.2\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.0.0.999, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.1.0.0\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="LumenWorks.Framework.IO, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5ad3ea2f85776344, processorArchitecture=MSIL">
+      <HintPath>..\packages\LumenWorksCsvReader.4.0.0\lib\net461\LumenWorks.Framework.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="MailKit, Version=2.1.0.0, Culture=neutral, PublicKeyToken=4e064fe7c44a8f1b, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailKit.2.1.3\lib\net45\MailKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.3.3, Culture=neutral, PublicKeyToken=8985beaab7ea3f04, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft-WindowsAPICodePack-Core.1.1.3.3\lib\net452\Microsoft.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.3.3, Culture=neutral, PublicKeyToken=8985beaab7ea3f04, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft-WindowsAPICodePack-Shell.1.1.3.3\lib\net452\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="MimeKit, Version=2.1.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
+      <HintPath>..\packages\MimeKit.2.1.3\lib\net45\MimeKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.4.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.4.1\lib\net45\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.4.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.4.1\lib\net45\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.4.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.4.1\lib\net45\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.4.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.4.1\lib\net45\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenCvSharp3-AnyCPU.4.0.0.20181129\lib\net461\OpenCvSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp.Blob, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenCvSharp3-AnyCPU.4.0.0.20181129\lib\net461\OpenCvSharp.Blob.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp.Extensions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenCvSharp3-AnyCPU.4.0.0.20181129\lib\net461\OpenCvSharp.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp.UserInterface, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenCvSharp3-AnyCPU.4.0.0.20181129\lib\net461\OpenCvSharp.UserInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.110.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.110.0\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.110.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.110.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.110.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.110.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Windows.Forms.DataVisualization.Design" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Components\BaseButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\BaseCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\BaseComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\BaseContextMenuStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\BaseDataGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\BaseDateTimePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\BaseFlowLayoutPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\BaseListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\BaseListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\BaseMenuStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\BaseNumericUpDown.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\BasePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\BasePictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\BaseRadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\BaseRichTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\BaseSplitContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\BaseStatusStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\BaseToolStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\BaseToolTip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\BaseUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\BaseUserControl.Designer.cs">
+      <DependentUpon>BaseUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\BaseLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\BaseTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\BaseTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Logics\MacroExecutor.cs" />
+    <Compile Include="Models\ArrayVariableModel.cs" />
+    <Compile Include="Models\CalendarModel.cs" />
+    <Compile Include="Models\Enums\AppStartType.cs" />
+    <Compile Include="Models\Enums\ArraySeparateType.cs" />
+    <Compile Include="Models\Enums\CalendarDataFormatType.cs" />
+    <Compile Include="Models\Enums\CalendarType.cs" />
+    <Compile Include="Models\Enums\DetectAreaType.cs" />
+    <Compile Include="Models\Enums\DetectFileModeType.cs" />
+    <Compile Include="Models\Enums\ExcelSourceType.cs" />
+    <Compile Include="Models\Enums\FileReadWriteType.cs" />
+    <Compile Include="Models\Enums\InputTargetType.cs" />
+    <Compile Include="Models\Enums\MacroStartType.cs" />
+    <Compile Include="Models\Enums\VariableCalcType.cs" />
+    <Compile Include="Models\Enums\CompareOperatorType.cs" />
+    <Compile Include="Models\Enums\CompareTypeType.cs" />
+    <Compile Include="Models\Enums\DetectType.cs" />
+    <Compile Include="Models\Enums\EncodeType.cs" />
+    <Compile Include="Models\Enums\ExecDataType.cs" />
+    <Compile Include="Models\Enums\FileDetectType.cs" />
+    <Compile Include="Models\Enums\FileFolderActionType.cs" />
+    <Compile Include="Models\Enums\FileFolderExecType.cs" />
+    <Compile Include="Models\Enums\FileOutputType.cs" />
+    <Compile Include="Models\Enums\KeyboardInputType.cs" />
+    <Compile Include="Models\Enums\LoadProjectMode.cs" />
+    <Compile Include="Models\Enums\LogType.cs" />
+    <Compile Include="Models\Enums\MouseInputDetectType.cs" />
+    <Compile Include="Models\Enums\MouseClickPosition.cs" />
+    <Compile Include="Models\Enums\MouseInputType.cs" />
+    <Compile Include="Models\Enums\MoveMouseType.cs" />
+    <Compile Include="Models\Enums\NodeType.cs" />
+    <Compile Include="Models\Enums\PointType.cs" />
+    <Compile Include="Models\Enums\VariableChoiceType.cs" />
+    <Compile Include="Models\Enums\VariableCompareTargetType.cs" />
+    <Compile Include="Models\Enums\ViewLogType.cs" />
+    <Compile Include="Models\ExcelJobModel.cs" />
+    <Compile Include="Models\ExecuteLogModel.cs" />
+    <Compile Include="Models\ProcessModel.cs" />
+    <Compile Include="Models\Enums\ProcessType.cs" />
+    <Compile Include="Models\ProjectModel.cs" />
+    <Compile Include="Models\Enums\ScrollType.cs" />
+    <Compile Include="Models\StringValue.cs" />
+    <Compile Include="Models\Enums\ValidType.cs" />
+    <Compile Include="Models\Enums\VariableExecType.cs" />
+    <Compile Include="Models\VariableModel.cs" />
+    <Compile Include="Models\VirtualKeyCode.cs" />
+    <Compile Include="Singleton\CalendarInfos.cs" />
+    <Compile Include="Singleton\SettingInfos.cs" />
+    <Compile Include="Utils\AsyncUtil.cs" />
+    <Compile Include="Utils\CaptureUtil.cs" />
+    <Compile Include="Utils\ControlUtil.cs" />
+    <Compile Include="Utils\CopyUtil.cs" />
+    <Compile Include="Utils\CryptUtil.cs" />
+    <Compile Include="Utils\CsvUtil.cs" />
+    <Compile Include="Utils\DbUtil.cs" />
+    <Compile Include="Utils\DialogUtil.cs" />
+    <Compile Include="Utils\FileUtil.cs" />
+    <Compile Include="Utils\GuiUtil.cs" />
+    <Compile Include="Utils\ImageUtil.cs" />
+    <Compile Include="Utils\KanaEx.cs" />
+    <Compile Include="Utils\KeyboardHook.cs" />
+    <Compile Include="Utils\MailUtil.cs" />
+    <Compile Include="Utils\ZipUtil.cs" />
+    <Compile Include="Views\Controls\AppControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Controls\AppControl.Designer.cs">
+      <DependentUpon>AppControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\CaptureImageChoiceControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Controls\CaptureImageChoiceControl.Designer.cs">
+      <DependentUpon>CaptureImageChoiceControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\DateControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Controls\DateControl.Designer.cs">
+      <DependentUpon>DateControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\DialogControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Controls\DialogControl.Designer.cs">
+      <DependentUpon>DialogControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\ExcelControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Controls\ExcelControl.Designer.cs">
+      <DependentUpon>ExcelControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\FileFolderControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Controls\FileFolderControl.Designer.cs">
+      <DependentUpon>FileFolderControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\MacroRunMsgControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Controls\MacroRunMsgControl.Designer.cs">
+      <DependentUpon>MacroRunMsgControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\CalendarEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\CalendarEditForm.Designer.cs">
+      <DependentUpon>CalendarEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\CaptureForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\CaptureForm.Designer.cs">
+      <DependentUpon>CaptureForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\MouseControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Controls\MouseControl.Designer.cs">
+      <DependentUpon>MouseControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\DetectControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Controls\DetectControl.Designer.cs">
+      <DependentUpon>DetectControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\KeyboardInputControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Controls\KeyboardInputControl.Designer.cs">
+      <DependentUpon>KeyboardInputControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\CreateDateTimeFuncForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\CreateDateTimeFuncForm.Designer.cs">
+      <DependentUpon>CreateDateTimeFuncForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\ExecLogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\ExecLogForm.Designer.cs">
+      <DependentUpon>ExecLogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\ImageChoiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\ImageChoiceForm.Designer.cs">
+      <DependentUpon>ImageChoiceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\LoadCalendarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\LoadCalendarForm.Designer.cs">
+      <DependentUpon>LoadCalendarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\LoadProjectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\LoadProjectForm.Designer.cs">
+      <DependentUpon>LoadProjectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\MailSendControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Controls\MailSendControl.Designer.cs">
+      <DependentUpon>MailSendControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\ProcessBaseControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Controls\ProcessBaseControl.Designer.cs">
+      <DependentUpon>ProcessBaseControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\ModuleSaveForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\ModuleSaveForm.Designer.cs">
+      <DependentUpon>ModuleSaveForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\ProcessChoiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\ProcessChoiceForm.Designer.cs">
+      <DependentUpon>ProcessChoiceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\ProcessEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\ProcessEditForm.Designer.cs">
+      <DependentUpon>ProcessEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Controls\NodeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Controls\NodeControl.Designer.cs">
+      <DependentUpon>NodeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\ProjectControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Controls\ProjectControl.Designer.cs">
+      <DependentUpon>ProjectControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\VariableControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Controls\VariableControl.Designer.cs">
+      <DependentUpon>VariableControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\SettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\SettingForm.Designer.cs">
+      <DependentUpon>SettingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\ValueChoiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\ValueChoiceForm.Designer.cs">
+      <DependentUpon>ValueChoiceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\VersionInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\VersionInfoForm.Designer.cs">
+      <DependentUpon>VersionInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\WaitControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Controls\WaitControl.Designer.cs">
+      <DependentUpon>WaitControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\WebCalendarEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\WebCalendarEditForm.Designer.cs">
+      <DependentUpon>WebCalendarEditForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Components\BaseButton.resx">
+      <DependentUpon>BaseButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\BaseUserControl.resx">
+      <DependentUpon>BaseUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\BaseLabel.resx">
+      <DependentUpon>BaseLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Controls\AppControl.resx">
+      <DependentUpon>AppControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Controls\CaptureImageChoiceControl.resx">
+      <DependentUpon>CaptureImageChoiceControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Controls\DateControl.resx">
+      <DependentUpon>DateControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Controls\DialogControl.resx">
+      <DependentUpon>DialogControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Controls\ExcelControl.resx">
+      <DependentUpon>ExcelControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Controls\FileFolderControl.resx">
+      <DependentUpon>FileFolderControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Controls\MacroRunMsgControl.resx">
+      <DependentUpon>MacroRunMsgControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\CalendarEditForm.resx">
+      <DependentUpon>CalendarEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\CaptureForm.resx">
+      <DependentUpon>CaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Controls\MouseControl.resx">
+      <DependentUpon>MouseControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Controls\DetectControl.resx">
+      <DependentUpon>DetectControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Controls\KeyboardInputControl.resx">
+      <DependentUpon>KeyboardInputControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\CreateDateTimeFuncForm.resx">
+      <DependentUpon>CreateDateTimeFuncForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\ExecLogForm.resx">
+      <DependentUpon>ExecLogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\ImageChoiceForm.resx">
+      <DependentUpon>ImageChoiceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\LoadCalendarForm.resx">
+      <DependentUpon>LoadCalendarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\LoadProjectForm.resx">
+      <DependentUpon>LoadProjectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Controls\MailSendControl.resx">
+      <DependentUpon>MailSendControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Controls\ProcessBaseControl.resx">
+      <DependentUpon>ProcessBaseControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\ModuleSaveForm.resx">
+      <DependentUpon>ModuleSaveForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\ProcessChoiceForm.resx">
+      <DependentUpon>ProcessChoiceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\ProcessEditForm.resx">
+      <DependentUpon>ProcessEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Views\Controls\NodeControl.resx">
+      <DependentUpon>NodeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Controls\ProjectControl.resx">
+      <DependentUpon>ProjectControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Controls\VariableControl.resx">
+      <DependentUpon>VariableControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\SettingForm.resx">
+      <DependentUpon>SettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\ValueChoiceForm.resx">
+      <DependentUpon>ValueChoiceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\VersionInfoForm.resx">
+      <DependentUpon>VersionInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Controls\WaitControl.resx">
+      <DependentUpon>WaitControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\WebCalendarEditForm.resx">
+      <DependentUpon>WebCalendarEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.manifest" />
+    <None Include="MacroboManual.xlsx" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\s256_f_business_4_0bg.ico" />
+    <Content Include="License.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Log4net.Config.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\baseline_remove_circle_red_18dp.png" />
+    <Content Include="Resources\icons8-add-filled-50.png" />
+    <Content Include="Resources\icons8-add-node-filled-25.png" />
+    <Content Include="Resources\icons8-calendar-11-filled-50.png" />
+    <Content Include="Resources\icons8-chat-bubble-filled-15.png" />
+    <Content Include="Resources\icons8-checkedcheckbox-25.png" />
+    <Content Include="Resources\icons8-collapse-26.png" />
+    <Content Include="Resources\icons8-compose-filled-50.png" />
+    <Content Include="Resources\icons8-copy-25.png" />
+    <Content Include="Resources\icons8-expand-26.png" />
+    <Content Include="Resources\icons8-paste-25.png" />
+    <None Include="Resources\illustrain09-kankyou1.png" />
+    <Content Include="Site\asset\image\logo.png" />
+    <Content Include="Site\asset\image\robot_256_256.ico" />
+    <Content Include="Site\css\main.css" />
+    <Content Include="Site\favicon.ico" />
+    <Content Include="Site\index.html" />
+    <Content Include="Site\version.txt" />
+    <None Include="Resources\icons8-create-filled-25.png" />
+    <Content Include="Resources\icons8-doc-folder-filled-15.png" />
+    <Content Include="Resources\icons8-down-24.png" />
+    <Content Include="Resources\icons8-email-15.png" />
+    <Content Include="Resources\icons8-excel-15.png" />
+    <Content Include="Resources\icons8-exe-filled-50.png" />
+    <Content Include="Resources\icons8-export-filled-50.png" />
+    <Content Include="Resources\icons8-help-filled-25.png" />
+    <Content Include="Resources\icons8-import-filled-50.png" />
+    <Content Include="Resources\icons8-keyboard-15.png" />
+    <None Include="Resources\icons8-microsoft-excel-25.png" />
+    <Content Include="Resources\icons8-module-filled-25.png" />
+    <Content Include="Resources\icons8-module-filled-50.png" />
+    <Content Include="Resources\icons8-mouse-filled-15.png" />
+    <Content Include="Resources\icons8-project-filled-25.png" />
+    <Content Include="Resources\icons8-project-filled-50.png" />
+    <Content Include="Resources\icons8-right-24.png" />
+    <Content Include="Resources\icons8-search-15.png" />
+    <Content Include="Resources\icons8-spinner-15.png" />
+    <Content Include="Resources\icons8-training-filled-50.png" />
+    <Content Include="Resources\icons8-unsplash-26.png" />
+    <Content Include="Resources\icons8-up-24.png" />
+    <Content Include="Resources\icons8-update-left-rotation-24.png" />
+    <Content Include="Resources\icons8-user-manual-filled-25.png" />
+    <Content Include="Resources\icons8-variable-filled-15.png" />
+    <Content Include="Resources\icons8-variable-filled-25.png" />
+    <Content Include="Resources\icons8-versions-filled-25.png" />
+    <Content Include="Resources\icons8-windows.png" />
+    <Content Include="Resources\icons8-wrench-filled-50.png" />
+    <Content Include="Resources\icons8-function-filled-25.png" />
+    <Content Include="Resources\icons8-pie-26.png" />
+    <Content Include="Resources\icons8-multiedit-filled-25.png" />
+    <Content Include="Resources\robot_256_256.ico" />
+    <Content Include="Resources\robot_512_512.ico" />
+    <Content Include="robot_128_128.ico" />
+    <None Include="Resources\MacroboManual.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\robot_32_32.ico" />
+    <None Include="Resources\robot_48_48.ico" />
+    <None Include="Resources\robot_64_64.ico" />
+    <None Include="Resources\robot_128_128.ico" />
+    <None Include="Resources\robot_icon.ico" />
+    <None Include="Resources\baseline_add_circle_black_18dp.png" />
+    <None Include="Resources\baseline_remove_circle_black_18dp.png" />
+    <None Include="Resources\baseline_stop_black_18dp.png" />
+    <None Include="Resources\baseline_save_black_18dp.png" />
+    <None Include="Resources\baseline_play_arrow_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.1 %28x86 および x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.110.0\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.110.0\build\net46\System.Data.SQLite.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>このプロジェクトは、このコンピューター上にない NuGet パッケージを参照しています。それらのパッケージをダウンロードするには、[NuGet パッケージの復元] を使用します。詳細については、http://go.microsoft.com/fwlink/?LinkID=322105 を参照してください。見つからないファイルは {0} です。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.110.0\build\net46\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.110.0\build\net46\System.Data.SQLite.Core.targets'))" />
+    <Error Condition="!Exists('..\packages\OpenCvSharp3-AnyCPU.4.0.0.20181129\build\OpenCvSharp3-AnyCPU.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\OpenCvSharp3-AnyCPU.4.0.0.20181129\build\OpenCvSharp3-AnyCPU.props'))" />
+  </Target>
+</Project>
