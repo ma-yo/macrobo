@@ -54,24 +54,24 @@ namespace Macrobo.Singleton
                 SettingDic = DbUtil.GetInstance().GetSettingInfoAll();
 
                 //編集中、処理タイプを変更する場合に、ダイアログによる警告を表示する。
-                if (!SettingDic.ContainsKey(1))
+                if (!SettingDic.ContainsKey(0))
                 {
-                    CreateSettingValue(1, "0");
+                    CreateSettingValue(0, "0");
                 }
                 //ノード・モジュールを移動等した場合の処理後移動先を自動設定する。
+                if (!SettingDic.ContainsKey(1))
+                {
+                    CreateSettingValue(1, "1");
+                }
+                //単体実行前にカウントダウンを行う
+                if (!SettingDic.ContainsKey(3))
+                {
+                    CreateSettingValue(3, "1");
+                }
+                //ノード・モジュールを追加した場合、追加した場所へ移動する。
                 if (!SettingDic.ContainsKey(2))
                 {
                     CreateSettingValue(2, "1");
-                }
-                //単体実行前にカウントダウンを行う
-                if (!SettingDic.ContainsKey(4))
-                {
-                    CreateSettingValue(4, "1");
-                }
-                //ノード・モジュールを追加した場合、追加した場所へ移動する。
-                if (!SettingDic.ContainsKey(5))
-                {
-                    CreateSettingValue(5, "1");
                 }
             }
             catch (Exception ex)

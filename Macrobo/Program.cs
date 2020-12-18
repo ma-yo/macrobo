@@ -55,7 +55,7 @@ namespace Macrobo
         /// </summary>
         static Program(){
             EXEC_FOLDER_PATH = Application.StartupPath;
-            USERPROFILE_PATH = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + @"\AppData\Roaming\AK soft\Macrobo";
+            USERPROFILE_PATH = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + @"\AppData\Roaming\ma-yo\Macrobo";
             EXEC_LOG_PATH = USERPROFILE_PATH + @"\execlogs";
             TMP_FOLDER = USERPROFILE_PATH + @"\tmp";
         }

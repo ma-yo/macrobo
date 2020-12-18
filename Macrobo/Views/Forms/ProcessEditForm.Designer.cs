@@ -409,7 +409,7 @@
             // 
             this.ManualButton.Image = global::Macrobo.Properties.Resources.icons8_user_manual_filled_25;
             this.ManualButton.Name = "ManualButton";
-            this.ManualButton.Size = new System.Drawing.Size(180, 22);
+            this.ManualButton.Size = new System.Drawing.Size(143, 22);
             this.ManualButton.Text = "操作マニュアル";
             this.ManualButton.Click += new System.EventHandler(this.ManualButton_Click);
             // 
@@ -417,7 +417,7 @@
             // 
             this.VersionInfoButton.Image = global::Macrobo.Properties.Resources.icons8_versions_filled_25;
             this.VersionInfoButton.Name = "VersionInfoButton";
-            this.VersionInfoButton.Size = new System.Drawing.Size(180, 22);
+            this.VersionInfoButton.Size = new System.Drawing.Size(143, 22);
             this.VersionInfoButton.Text = "バージョン情報";
             this.VersionInfoButton.Click += new System.EventHandler(this.VersionInfoButton_Click);
             // 

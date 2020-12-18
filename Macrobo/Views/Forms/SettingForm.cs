@@ -31,7 +31,7 @@ namespace Macrobo.Views.Forms
                 InitializeComponent();
                 _checkBoxList.Add(Setting1CheckBox);
                 _checkBoxList.Add(Setting2CheckBox);
-                _checkBoxList.Add(Setting3CheckBox);
+                //_checkBoxList.Add(Setting3CheckBox);
                 _checkBoxList.Add(Setting4CheckBox);
                 _checkBoxList.Add(Setting5CheckBox);
 

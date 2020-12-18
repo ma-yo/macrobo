@@ -48,7 +48,7 @@
             this.Setting1Lbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Setting1Lbl.Font = new System.Drawing.Font("MS UI Gothic", 11F);
             this.Setting1Lbl.ForeColor = System.Drawing.Color.Black;
-            this.Setting1Lbl.Location = new System.Drawing.Point(12, 93);
+            this.Setting1Lbl.Location = new System.Drawing.Point(12, 35);
             this.Setting1Lbl.Name = "Setting1Lbl";
             this.Setting1Lbl.Size = new System.Drawing.Size(572, 23);
             this.Setting1Lbl.TabIndex = 40;
@@ -62,7 +62,7 @@
             this.Setting1CheckBox.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
             this.Setting1CheckBox.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Setting1CheckBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Setting1CheckBox.Location = new System.Drawing.Point(583, 93);
+            this.Setting1CheckBox.Location = new System.Drawing.Point(583, 35);
             this.Setting1CheckBox.Name = "Setting1CheckBox";
             this.Setting1CheckBox.Size = new System.Drawing.Size(66, 23);
             this.Setting1CheckBox.TabIndex = 2;
@@ -76,7 +76,7 @@
             this.Setting2Lbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Setting2Lbl.Font = new System.Drawing.Font("MS UI Gothic", 11F);
             this.Setting2Lbl.ForeColor = System.Drawing.Color.Black;
-            this.Setting2Lbl.Location = new System.Drawing.Point(12, 115);
+            this.Setting2Lbl.Location = new System.Drawing.Point(12, 56);
             this.Setting2Lbl.Name = "Setting2Lbl";
             this.Setting2Lbl.Size = new System.Drawing.Size(572, 23);
             this.Setting2Lbl.TabIndex = 42;
@@ -90,7 +90,7 @@
             this.Setting2CheckBox.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
             this.Setting2CheckBox.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Setting2CheckBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Setting2CheckBox.Location = new System.Drawing.Point(583, 115);
+            this.Setting2CheckBox.Location = new System.Drawing.Point(583, 56);
             this.Setting2CheckBox.Name = "Setting2CheckBox";
             this.Setting2CheckBox.Size = new System.Drawing.Size(66, 23);
             this.Setting2CheckBox.TabIndex = 3;
@@ -112,6 +112,7 @@
             this.Setting3CheckBox.Text = "OFF";
             this.Setting3CheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Setting3CheckBox.UseVisualStyleBackColor = false;
+            this.Setting3CheckBox.Visible = false;
             // 
             // Setting3Lbl
             // 
@@ -125,6 +126,7 @@
             this.Setting3Lbl.TabIndex = 44;
             this.Setting3Lbl.Text = "システムの更新チェックを起動時に行う。";
             this.Setting3Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Setting3Lbl.Visible = false;
             // 
             // Setting4CheckBox
             // 
@@ -133,7 +135,7 @@
             this.Setting4CheckBox.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
             this.Setting4CheckBox.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Setting4CheckBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Setting4CheckBox.Location = new System.Drawing.Point(583, 159);
+            this.Setting4CheckBox.Location = new System.Drawing.Point(583, 100);
             this.Setting4CheckBox.Name = "Setting4CheckBox";
             this.Setting4CheckBox.Size = new System.Drawing.Size(66, 23);
             this.Setting4CheckBox.TabIndex = 45;
@@ -147,7 +149,7 @@
             this.Setting4Lbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Setting4Lbl.Font = new System.Drawing.Font("MS UI Gothic", 11F);
             this.Setting4Lbl.ForeColor = System.Drawing.Color.Black;
-            this.Setting4Lbl.Location = new System.Drawing.Point(12, 159);
+            this.Setting4Lbl.Location = new System.Drawing.Point(12, 100);
             this.Setting4Lbl.Name = "Setting4Lbl";
             this.Setting4Lbl.Size = new System.Drawing.Size(572, 23);
             this.Setting4Lbl.TabIndex = 46;
@@ -161,7 +163,7 @@
             this.Setting5CheckBox.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
             this.Setting5CheckBox.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Setting5CheckBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Setting5CheckBox.Location = new System.Drawing.Point(583, 137);
+            this.Setting5CheckBox.Location = new System.Drawing.Point(583, 78);
             this.Setting5CheckBox.Name = "Setting5CheckBox";
             this.Setting5CheckBox.Size = new System.Drawing.Size(66, 23);
             this.Setting5CheckBox.TabIndex = 47;
@@ -175,7 +177,7 @@
             this.Setting5Lbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Setting5Lbl.Font = new System.Drawing.Font("MS UI Gothic", 11F);
             this.Setting5Lbl.ForeColor = System.Drawing.Color.Black;
-            this.Setting5Lbl.Location = new System.Drawing.Point(12, 137);
+            this.Setting5Lbl.Location = new System.Drawing.Point(12, 78);
             this.Setting5Lbl.Name = "Setting5Lbl";
             this.Setting5Lbl.Size = new System.Drawing.Size(572, 23);
             this.Setting5Lbl.TabIndex = 48;
@@ -192,12 +194,13 @@
             this.baseLabel1.TabIndex = 49;
             this.baseLabel1.Text = "全般";
             this.baseLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.baseLabel1.Visible = false;
             // 
             // baseLabel2
             // 
             this.baseLabel2.AutoSize = true;
             this.baseLabel2.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.baseLabel2.Location = new System.Drawing.Point(12, 71);
+            this.baseLabel2.Location = new System.Drawing.Point(12, 13);
             this.baseLabel2.Name = "baseLabel2";
             this.baseLabel2.Size = new System.Drawing.Size(105, 16);
             this.baseLabel2.TabIndex = 50;

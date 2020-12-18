@@ -1,4 +1,4 @@
-﻿Macrobo - ライセンス情報 2019 AK soft
+﻿Macrobo - ライセンス情報 2019 ma-yo
 
 BouncyCastle 
 Author : Bouncy Castle Project Contributors
