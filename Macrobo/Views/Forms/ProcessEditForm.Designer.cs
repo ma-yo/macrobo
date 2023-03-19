@@ -313,7 +313,7 @@
             // 
             this.AddVariableButton.Image = global::Macrobo.Properties.Resources.baseline_add_circle_black_18dp;
             this.AddVariableButton.Name = "AddVariableButton";
-            this.AddVariableButton.Size = new System.Drawing.Size(164, 22);
+            this.AddVariableButton.Size = new System.Drawing.Size(163, 22);
             this.AddVariableButton.Text = "変数追加";
             this.AddVariableButton.Click += new System.EventHandler(this.AddVariableButton_Click);
             // 
@@ -321,7 +321,7 @@
             // 
             this.RemoveVariableButton.Image = global::Macrobo.Properties.Resources.baseline_remove_circle_red_18dp;
             this.RemoveVariableButton.Name = "RemoveVariableButton";
-            this.RemoveVariableButton.Size = new System.Drawing.Size(164, 22);
+            this.RemoveVariableButton.Size = new System.Drawing.Size(163, 22);
             this.RemoveVariableButton.Text = "変数削除";
             this.RemoveVariableButton.Click += new System.EventHandler(this.RemoveVariableButton_Click);
             // 
@@ -329,7 +329,7 @@
             // 
             this.AddArrayVariableButton.Image = global::Macrobo.Properties.Resources.baseline_add_circle_black_18dp;
             this.AddArrayVariableButton.Name = "AddArrayVariableButton";
-            this.AddArrayVariableButton.Size = new System.Drawing.Size(164, 22);
+            this.AddArrayVariableButton.Size = new System.Drawing.Size(163, 22);
             this.AddArrayVariableButton.Text = "変数配列追加";
             this.AddArrayVariableButton.Click += new System.EventHandler(this.AddArrayVariableButton_Click);
             // 
@@ -337,7 +337,7 @@
             // 
             this.RemoveArrayVariableButton.Image = global::Macrobo.Properties.Resources.baseline_remove_circle_red_18dp;
             this.RemoveArrayVariableButton.Name = "RemoveArrayVariableButton";
-            this.RemoveArrayVariableButton.Size = new System.Drawing.Size(164, 22);
+            this.RemoveArrayVariableButton.Size = new System.Drawing.Size(163, 22);
             this.RemoveArrayVariableButton.Text = "変数配列削除";
             this.RemoveArrayVariableButton.Click += new System.EventHandler(this.RemoveArrayVariableButton_Click);
             // 
@@ -345,7 +345,7 @@
             // 
             this.DateTimeFuncButton.Image = global::Macrobo.Properties.Resources.icons8_function_filled_25;
             this.DateTimeFuncButton.Name = "DateTimeFuncButton";
-            this.DateTimeFuncButton.Size = new System.Drawing.Size(164, 22);
+            this.DateTimeFuncButton.Size = new System.Drawing.Size(163, 22);
             this.DateTimeFuncButton.Text = "日付関数作成";
             this.DateTimeFuncButton.Click += new System.EventHandler(this.DateTimeFuncButton_Click);
             // 
@@ -353,7 +353,7 @@
             // 
             this.DesktopPathButton.Image = global::Macrobo.Properties.Resources.icons8_pie_26;
             this.DesktopPathButton.Name = "DesktopPathButton";
-            this.DesktopPathButton.Size = new System.Drawing.Size(164, 22);
+            this.DesktopPathButton.Size = new System.Drawing.Size(163, 22);
             this.DesktopPathButton.Text = "デスクトップパス";
             this.DesktopPathButton.Click += new System.EventHandler(this.DesktopPathButton_Click);
             // 
@@ -361,7 +361,7 @@
             // 
             this.DocumentPathButton.Image = global::Macrobo.Properties.Resources.icons8_pie_26;
             this.DocumentPathButton.Name = "DocumentPathButton";
-            this.DocumentPathButton.Size = new System.Drawing.Size(164, 22);
+            this.DocumentPathButton.Size = new System.Drawing.Size(163, 22);
             this.DocumentPathButton.Text = "ドキュメントパス";
             this.DocumentPathButton.Click += new System.EventHandler(this.DocumentPathButton_Click);
             // 
@@ -369,7 +369,7 @@
             // 
             this.UserFolderPathButton.Image = global::Macrobo.Properties.Resources.icons8_pie_26;
             this.UserFolderPathButton.Name = "UserFolderPathButton";
-            this.UserFolderPathButton.Size = new System.Drawing.Size(164, 22);
+            this.UserFolderPathButton.Size = new System.Drawing.Size(163, 22);
             this.UserFolderPathButton.Text = "ユーザーフォルダパス";
             this.UserFolderPathButton.Click += new System.EventHandler(this.UserFolderPathButton_Click);
             // 
@@ -377,7 +377,7 @@
             // 
             this.ExecLogButton.Image = global::Macrobo.Properties.Resources.icons8_pie_26;
             this.ExecLogButton.Name = "ExecLogButton";
-            this.ExecLogButton.Size = new System.Drawing.Size(164, 22);
+            this.ExecLogButton.Size = new System.Drawing.Size(163, 22);
             this.ExecLogButton.Text = "実行ログ";
             this.ExecLogButton.Click += new System.EventHandler(this.ExecLogButton_Click);
             // 
@@ -385,7 +385,7 @@
             // 
             this.TabButton.Image = global::Macrobo.Properties.Resources.icons8_pie_26;
             this.TabButton.Name = "TabButton";
-            this.TabButton.Size = new System.Drawing.Size(164, 22);
+            this.TabButton.Size = new System.Drawing.Size(163, 22);
             this.TabButton.Text = "TAB入力";
             this.TabButton.Click += new System.EventHandler(this.TabButton_Click);
             // 

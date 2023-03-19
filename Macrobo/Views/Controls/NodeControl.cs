@@ -669,7 +669,7 @@ namespace Macrobo.Views
                 ctrl.DetectAreaSXTextBox.Text = procModel.DetectAreaSX;
                 ctrl.DetectAreaSYTextBox.Text = procModel.DetectAreaSY;
                 ctrl.DetectAreaEXTextBox.Text = procModel.DetectAreaEX;
-                ctrl.DetectAreaEYTextBox.Text = procModel.DetectAreaSY;
+                ctrl.DetectAreaEYTextBox.Text = procModel.DetectAreaEY;
 
                 ctrl.ScrollSpeedUpDown.Value = procModel.ScrollSpeed;
                 ctrl.ScrollAmountUpDown.Value = procModel.ScrollAmount;
