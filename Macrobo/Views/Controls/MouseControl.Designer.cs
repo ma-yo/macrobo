@@ -1188,7 +1188,6 @@
             this.Controls.Add(this.DetectTypeTitleLbl);
             this.Controls.Add(this.OffsetYTextBox);
             this.Controls.Add(this.OffsetXTextBox);
-            this.Controls.Add(this.ClickCountUpDown);
             this.Controls.Add(this.TimeoutNumericUpDown);
             this.Controls.Add(this.CaptureStartButton);
             this.Controls.Add(this.ScrollSpeedTitleLbl);
