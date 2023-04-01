@@ -985,7 +985,7 @@ namespace Macrobo.Views
                 procModel.DetectAreaEY = ctrl.DetectAreaEYTextBox.Text;
 
                 procModel.PointType = (PointType)ctrl.PointTypeButton.Tag;
-                procModel.ClickCount = ctrl.ClickCountUpDown.Value;
+                procModel.ClickCount = ctrl.ClickCountUpDown.Text;
                 procModel.ClickPosition = (MouseClickPosition)ctrl.ClickPosButton.Tag;
                 int.TryParse(ctrl.OffsetXTextBox.Text, out int pointX);
                 procModel.OffsetXPoint = pointX;

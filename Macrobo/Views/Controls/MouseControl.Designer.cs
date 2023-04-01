@@ -34,7 +34,6 @@
             this.OffsetXTitleLbl = new Macrobo.Components.BaseLabel();
             this.OffsetYTitleLbl = new Macrobo.Components.BaseLabel();
             this.ClickPointTitleLbl = new Macrobo.Components.BaseLabel();
-            this.ClickCountUpDown = new Macrobo.Components.BaseNumericUpDown();
             this.ClickCountTitleLbl = new Macrobo.Components.BaseLabel();
             this.TimeoutNumericUpDown = new Macrobo.Components.BaseNumericUpDown();
             this.TimeoutTitleLbl = new Macrobo.Components.BaseLabel();
@@ -95,10 +94,10 @@
             this.ScrollCountUpDown = new Macrobo.Components.BaseNumericUpDown();
             this.LoadCaptureImageButton = new Macrobo.Components.BaseButton();
             this.LoadCaptureImageButton2 = new Macrobo.Components.BaseButton();
+            this.ClickCountUpDown = new Macrobo.Components.BaseTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.AfterWaitTimeUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BeforeWaitTimeUpDown)).BeginInit();
             this.ValidTypePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ClickCountUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TimeoutNumericUpDown)).BeginInit();
             this.DetectTypePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CaptureImage2)).BeginInit();
@@ -239,27 +238,6 @@
             this.ClickPointTitleLbl.Text = "クリック位置";
             this.ClickPointTitleLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // ClickCountUpDown
-            // 
-            this.ClickCountUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ClickCountUpDown.Font = new System.Drawing.Font("MS UI Gothic", 11F);
-            this.ClickCountUpDown.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.ClickCountUpDown.Location = new System.Drawing.Point(105, 405);
-            this.ClickCountUpDown.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.ClickCountUpDown.Name = "ClickCountUpDown";
-            this.ClickCountUpDown.Size = new System.Drawing.Size(160, 22);
-            this.ClickCountUpDown.TabIndex = 41;
-            this.ClickCountUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ClickCountUpDown.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
             // ClickCountTitleLbl
             // 
             this.ClickCountTitleLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -270,7 +248,7 @@
             this.ClickCountTitleLbl.Name = "ClickCountTitleLbl";
             this.ClickCountTitleLbl.Size = new System.Drawing.Size(103, 22);
             this.ClickCountTitleLbl.TabIndex = 18;
-            this.ClickCountTitleLbl.Text = "クリック回数";
+            this.ClickCountTitleLbl.Text = "クリック回数($)";
             this.ClickCountTitleLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TimeoutNumericUpDown
@@ -1142,10 +1120,34 @@
             this.LoadCaptureImageButton2.UseVisualStyleBackColor = false;
             this.LoadCaptureImageButton2.Click += new System.EventHandler(this.LoadCaptureImageButton2_Click);
             // 
+            // ClickCountUpDown
+            // 
+            this.ClickCountUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ClickCountUpDown.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ClickCountUpDown.DefaultAlphaNumberOnly = false;
+            this.ClickCountUpDown.DefaultClickSelectAll = false;
+            this.ClickCountUpDown.DefaultNarrow = false;
+            this.ClickCountUpDown.DefaultNumberOnly = false;
+            this.ClickCountUpDown.DefaultToUpper = false;
+            this.ClickCountUpDown.DefaultTrim = false;
+            this.ClickCountUpDown.FocusBackColor = System.Drawing.Color.Empty;
+            this.ClickCountUpDown.FocusForeColor = System.Drawing.Color.Empty;
+            this.ClickCountUpDown.Font = new System.Drawing.Font("MS UI Gothic", 10.75F);
+            this.ClickCountUpDown.Location = new System.Drawing.Point(105, 405);
+            this.ClickCountUpDown.MaxLengthBytes = 0;
+            this.ClickCountUpDown.Name = "ClickCountUpDown";
+            this.ClickCountUpDown.RenderingMode = System.Drawing.Drawing2D.SmoothingMode.Default;
+            this.ClickCountUpDown.Size = new System.Drawing.Size(160, 22);
+            this.ClickCountUpDown.TabIndex = 98;
+            this.ClickCountUpDown.Text = "1";
+            this.ClickCountUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ClickCountUpDown.TextRenderingMode = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            // 
             // MouseControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.ClickCountUpDown);
             this.Controls.Add(this.LoadCaptureImageButton2);
             this.Controls.Add(this.LoadCaptureImageButton);
             this.Controls.Add(this.ImageChoicePanel);
@@ -1203,7 +1205,6 @@
             this.Controls.SetChildIndex(this.ScrollSpeedTitleLbl, 0);
             this.Controls.SetChildIndex(this.CaptureStartButton, 0);
             this.Controls.SetChildIndex(this.TimeoutNumericUpDown, 0);
-            this.Controls.SetChildIndex(this.ClickCountUpDown, 0);
             this.Controls.SetChildIndex(this.OffsetXTextBox, 0);
             this.Controls.SetChildIndex(this.OffsetYTextBox, 0);
             this.Controls.SetChildIndex(this.DetectTypeTitleLbl, 0);
@@ -1256,11 +1257,11 @@
             this.Controls.SetChildIndex(this.ImageChoicePanel, 0);
             this.Controls.SetChildIndex(this.LoadCaptureImageButton, 0);
             this.Controls.SetChildIndex(this.LoadCaptureImageButton2, 0);
+            this.Controls.SetChildIndex(this.ClickCountUpDown, 0);
             ((System.ComponentModel.ISupportInitialize)(this.AfterWaitTimeUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BeforeWaitTimeUpDown)).EndInit();
             this.ValidTypePanel.ResumeLayout(false);
             this.ValidTypePanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ClickCountUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TimeoutNumericUpDown)).EndInit();
             this.DetectTypePanel.ResumeLayout(false);
             this.DetectTypePanel.PerformLayout();
@@ -1283,7 +1284,6 @@
         public Components.BaseNumericUpDown TimeoutNumericUpDown;
         public Components.BaseLabel TimeoutTitleLbl;
         public Components.BaseButton CaptureStartButton;
-        public Components.BaseNumericUpDown ClickCountUpDown;
         public Components.BaseLabel ClickCountTitleLbl;
         public Components.BaseLabel ClickPointTitleLbl;
         public Components.BaseLabel OffsetXTitleLbl;
@@ -1347,5 +1347,6 @@
         public Components.BaseRadioButton Image7RadioButton;
         public Components.BaseButton LoadCaptureImageButton;
         public Components.BaseButton LoadCaptureImageButton2;
+        public Components.BaseTextBox ClickCountUpDown;
     }
 }

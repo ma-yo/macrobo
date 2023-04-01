@@ -23,7 +23,7 @@ namespace Macrobo.Utils
         }
         public static DialogResult ShowInfoDialog(this Control c, string title, string message)
         {
-            return MessageBox.Show(c, message, title, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            return MessageBox.Show(c, message, title, MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
         }
         public static DialogResult ShowInfoDialog(this Control c, string title, string message, MessageBoxButtons button, MessageBoxDefaultButton defaultButton)
         {

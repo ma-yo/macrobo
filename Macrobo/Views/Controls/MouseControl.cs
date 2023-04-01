@@ -373,6 +373,7 @@ namespace Macrobo.Views
                 MouseClickRadio.Checked = true;
                 OffsetXTextBox.Text = "0";
                 OffsetYTextBox.Text = "0";
+                ClickCountUpDown.Text = "0";
             }
             catch (Exception ex)
             {

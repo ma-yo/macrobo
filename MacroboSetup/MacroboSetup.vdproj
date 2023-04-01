@@ -604,7 +604,7 @@
                 {
                 "Name" = "8:.NET Framework"
                 "Message" = "8:[VSDNETMSG]"
-                "FrameworkVersion" = "8:v4.6.1"
+                "FrameworkVersion" = "8:v4.6.1 "
                 "AllowLaterVersions" = "11:FALSE"
                 "InstallUrl" = "8:http://go.microsoft.com/fwlink/?LinkId=671728"
                 }
@@ -1743,8 +1743,8 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Macrobo"
         "ProductCode" = "8:{AFD19541-EB0A-436B-B027-2671DAE6BEFD}"
-        "PackageCode" = "8:{E034759C-F0F0-4B05-90EB-7C69B7DC056D}"
-        "UpgradeCode" = "8:{A572E2F4-053D-418A-9B49-568FCF9DC921}"
+        "PackageCode" = "8:{F03EABBD-5655-41B4-B881-6B4E4EABB035}"
+        "UpgradeCode" = "8:{C6EE8B13-A3F2-43C9-92B9-AC2B586CA956}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"

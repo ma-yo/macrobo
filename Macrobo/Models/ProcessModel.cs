@@ -78,7 +78,7 @@ namespace Macrobo.Models
         /// <summary>
         /// クリック回数を保持する
         /// </summary>
-        public decimal ClickCount { get; set; }
+        public string ClickCount { get; set; }
         /// <summary>
         /// マウスクリック場所を保持する
         /// </summary>

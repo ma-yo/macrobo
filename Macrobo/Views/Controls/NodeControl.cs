@@ -583,7 +583,7 @@ namespace Macrobo.Views
 
                 ctrl.PointTypeButton.Tag = procModel.PointType;
                 ctrl.TimeoutNumericUpDown.Value = procModel.Timeout;
-                ctrl.ClickCountUpDown.Value = procModel.ClickCount;
+                ctrl.ClickCountUpDown.Text = procModel.ClickCount;
                 ctrl.OffsetXTextBox.Text = "" + procModel.OffsetXPoint;
                 ctrl.OffsetYTextBox.Text = "" + procModel.OffsetYPoint;
                 ctrl.ClickPosButton.Tag = procModel.ClickPosition;

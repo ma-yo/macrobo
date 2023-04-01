@@ -336,7 +336,7 @@ namespace Macrobo.Logics
                             result = ActionKeyboardInput(variableList, arrayVariableList, proc);
                             break;
                         case ProcessType.マウス入力:
-                            result = ActionMouseInput(proc);
+                            result = ActionMouseInput(variableList, arrayVariableList, proc);
                             break;
                         case ProcessType.待機:
                             result = ActionWait(proc);
@@ -870,9 +870,11 @@ namespace Macrobo.Logics
         /// <summary>
         /// マウスインプット処理を実行する
         /// </summary>
+        /// <param name="variableList"></param>
+        /// <param name="arrayVariableList"></param>
         /// <param name="proc"></param>
         /// <returns></returns>
-        private bool ActionMouseInput(ProcessModel proc)
+        private bool ActionMouseInput(Dictionary<string, VariableModel> variableList, Dictionary<string, ArrayVariableModel> arrayVariableList, ProcessModel proc)
         {
             try
             {
@@ -882,9 +884,9 @@ namespace Macrobo.Logics
                         switch (proc.MouseClickDetectType)
                         {
                             case MouseInputDetectType.画像検出:
-                                if (ActionMouseImageDetectMove(proc, -1))
+                                if (ActionMouseImageDetectMove(variableList, arrayVariableList, proc, -1))
                                 {
-                                    ActionMouseClick(proc);
+                                    ActionMouseClick(variableList, arrayVariableList, proc);
                                     return true;
                                 }
                                 else
@@ -892,8 +894,8 @@ namespace Macrobo.Logics
                                     return false;
                                 }
                             case MouseInputDetectType.座標検出:
-                                ActionMouseMove(proc);
-                                ActionMouseClick(proc);
+                                ActionMouseMove(variableList, arrayVariableList, proc);
+                                ActionMouseClick(variableList, arrayVariableList, proc);
                                 return true;
                         }
                         break;
@@ -901,9 +903,9 @@ namespace Macrobo.Logics
                         switch (proc.MouseClickDetectType)
                         {
                             case MouseInputDetectType.画像検出:
-                                return ActionMouseImageDetectMove(proc, -1);
+                                return ActionMouseImageDetectMove(variableList, arrayVariableList, proc, -1);
                             case MouseInputDetectType.座標検出:
-                                ActionMouseMove(proc);
+                                ActionMouseMove(variableList, arrayVariableList, proc);
                                 return true;
                         }
                         break;
@@ -911,7 +913,7 @@ namespace Macrobo.Logics
                         for(int i = 0; i < proc.ScrollCount; i++)
                         {
                             if (_stopFlag) return false;
-                            SetMouseScroll(proc);
+                            SetMouseScroll(variableList, arrayVariableList, proc);
                             OnLogEvent?.Invoke(LogType.INFO, SetLog("[" + proc.Name + "]ホイールスクロール " + (i + 1) + "回目"), _projectModel);
                         }
                         return true;
@@ -920,12 +922,12 @@ namespace Macrobo.Logics
                         {
                             case MouseInputDetectType.画像検出:
                                 {
-                                    DetectImageObject pos1 = GetImageDetectPoint(proc, 0);
+                                    DetectImageObject pos1 = GetImageDetectPoint(variableList, arrayVariableList, proc, 0);
                                     if (pos1.DetectPoint.IsEmpty)
                                     {
                                         return false;
                                     }
-                                    DetectImageObject pos2 = GetImageDetectPoint(proc, 1);
+                                    DetectImageObject pos2 = GetImageDetectPoint(variableList, arrayVariableList, proc, 1);
                                     if (pos2.DetectPoint.IsEmpty)
                                     {
                                         return false;
@@ -937,7 +939,7 @@ namespace Macrobo.Logics
                                 }
                             case MouseInputDetectType.座標検出:
                                 {
-                                    DetectImageObject pos1 = GetImageDetectPoint(proc, 0);
+                                    DetectImageObject pos1 = GetImageDetectPoint(variableList, arrayVariableList, proc, 0);
                                     if (pos1.DetectPoint.IsEmpty)
                                     {
                                         return false;
@@ -1052,11 +1054,13 @@ namespace Macrobo.Logics
         /// <summary>
         /// 画像位置を検出し画像中央の座標を取得する
         /// </summary>
+        /// <param name="variableList"></param>
+        /// <param name="arrayVariableList"></param>
         /// <param name="proc"></param>
         /// <param name="imageIndex"></param>
         /// <param name="detectIndex"></param>
         /// <returns></returns>
-        private DetectImageObject GetImageDetectPoint(ProcessModel proc, int imageIndex)
+        private DetectImageObject GetImageDetectPoint(Dictionary<string, VariableModel> variableList, Dictionary<string, ArrayVariableModel> arrayVariableList, ProcessModel proc, int imageIndex)
         {
             try
             {
@@ -1104,7 +1108,7 @@ namespace Macrobo.Logics
                     Thread.Sleep(WAIT_TIME1);
                     if (!isFirst)
                     {
-                        SetMouseScroll(proc);
+                        SetMouseScroll(variableList, arrayVariableList, proc);
                     }
                     isFirst = false;
                     List<Bitmap> tmpList = new List<Bitmap>();
@@ -1192,14 +1196,16 @@ namespace Macrobo.Logics
         /// <summary>
         /// 画像検出し、マウスを移動する
         /// </summary>
+        /// <param name="variableList"></param>
+        /// <param name="arrayVariableList"></param>
         /// <param name="proc"></param>
         /// <param name="imageIndex"></param>
         /// <returns></returns>
-        private bool ActionMouseImageDetectMove(ProcessModel proc, int imageIndex)
+        private bool ActionMouseImageDetectMove(Dictionary<string, VariableModel> variableList, Dictionary<string, ArrayVariableModel> arrayVariableList, ProcessModel proc, int imageIndex)
         {
             try
             {
-                DetectImageObject pos = GetImageDetectPoint(proc, imageIndex);
+                DetectImageObject pos = GetImageDetectPoint(variableList, arrayVariableList, proc, imageIndex);
                 if (pos.DetectPoint == System.Drawing.Point.Empty) return false;
 
                 if (_stopFlag) return false;
@@ -1254,8 +1260,10 @@ namespace Macrobo.Logics
         /// <summary>
         /// マウス移動を実行する
         /// </summary>
+        /// <param name="variableList"></param>
+        /// <param name="arrayVariableList"></param>
         /// <param name="proc"></param>
-        private void ActionMouseMove(ProcessModel proc)
+        private void ActionMouseMove(Dictionary<string, VariableModel> variableList, Dictionary<string, ArrayVariableModel> arrayVariableList, ProcessModel proc)
         {
             try
             {
@@ -1271,12 +1279,25 @@ namespace Macrobo.Logics
         /// <summary>
         /// マウスクリックを実行する
         /// </summary>
+        /// <param name="variableList"></param>
+        /// <param name="arrayVariableList"></param>
         /// <param name="proc"></param>
-        private void ActionMouseClick(ProcessModel proc)
+        private void ActionMouseClick(Dictionary<string, VariableModel> variableList, Dictionary<string, ArrayVariableModel> arrayVariableList, ProcessModel proc)
         {
             try
             {
-                for (int i = 0; i < proc.ClickCount; i++)
+                int clickCount = 0;
+                if (proc.ClickCount.StartsWith("$"))
+                {
+                    clickCount = int.Parse(variableList[proc.ClickCount.Substring(1)].Value);
+                }
+                else
+                {
+                    clickCount = int.Parse(proc.ClickCount);
+                }
+                if (clickCount <= 0) return;
+
+                for (int i = 0; i < clickCount; i++)
                 {
                     if (_stopFlag) return;
                     //KeyDown
@@ -2718,7 +2739,7 @@ namespace Macrobo.Logics
                     case DetectType.ファイル:
                         return DetectFileOrFolder(variableList, arrayVariableList, proc);
                     case DetectType.画像:
-                        DetectImageObject point = GetImageDetectPoint(proc, -1);
+                        DetectImageObject point = GetImageDetectPoint(variableList, arrayVariableList, proc, -1);
                         if (point.DetectPoint == System.Drawing.Point.Empty) return false;
                         if (proc.MoveMouseType == MoveMouseType.移動する)
                         {
@@ -2828,8 +2849,10 @@ namespace Macrobo.Logics
         /// <summary>
         /// マウススクロールを行う
         /// </summary>
+        /// <param name="variableList"></param>
+        /// <param name="arrayVariableList"></param>
         /// <param name="proc"></param>
-        private void SetMouseScroll(ProcessModel proc)
+        private void SetMouseScroll(Dictionary<string, VariableModel> variableList, Dictionary<string, ArrayVariableModel> arrayVariableList, ProcessModel proc)
         {
             try
             {
